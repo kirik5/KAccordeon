@@ -1,0 +1,61 @@
+@import "fonts.less";
+@import "settings.less";
+@import "mixins.less";
+@import "smart-grid.less";
+
+.reset();
+
+.firstScreen {
+    &__wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+.accordeon {
+    margin: 20px;
+
+    &__element[data-opened] {
+        .accordeon__titleIcon{
+            transform: rotate(-180deg);
+        }
+    }
+
+    &__title {
+        display: flex;
+        background-color: yellowgreen;
+        padding: 15px;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    &__titleIcon {
+        fill: black;  
+    }
+
+    &__titleIcon_transform{
+        transition: transform .5s;
+    }
+
+    &__content {
+        background-color: yellow;
+        box-sizing: border-box;
+    }
+
+    &__contentContainer{
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    &__content_animTarget {
+        will-change: max-height;
+        transition: max-height .5s;
+        max-height: 0;
+        overflow: hidden;
+        box-sizing: content-box;
+        overflow: hidden;
+        max-height: 0;
+        padding: 0;
+    }
+}
